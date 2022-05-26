@@ -8,6 +8,7 @@ const Form = () => {
     const input=useRef();
     let{setMovieName} = useContext(movieContext);
     let[btnStyle,setBtnStyle]=useState('search-btn');
+    let [chechkButton,setCheckButton]=useState(true);
 
     const submitForm=(e)=>{
       e.preventDefault();
@@ -17,7 +18,8 @@ const Form = () => {
 
     const onInput=()=>{
        if(input.current.value.length>=1){
-          setBtnStyle('btnActive')
+          setBtnStyle('btnActive');
+          setCheckButton(false);
        }
        else{
         setBtnStyle('search-btn')
@@ -25,15 +27,15 @@ const Form = () => {
     }
   return (
    <div className="col-8">
-       <div className="form">
+      <div className="form">
             <form onSubmit={submitForm}>
                 <label htmlFor="movieName">Filmi başlığa görə axtarın:</label><br/><br/>
                <div className="add-search">
                     <input type="text" onInput={onInput} name='movieName' ref={input} id='movieName' placeholder='Məsələn, Shawshank Redemption' />
-                    <button type='submit' className={btnStyle}  ref={search}>Axtar</button>
+                    <button type='submit' className={btnStyle} disabled={chechkButton} ref={search}>Axtar</button>
                </div>
             </form>
-       </div>
+      </div>
    </div>
    
   )
