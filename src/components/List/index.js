@@ -1,11 +1,12 @@
 import './style.css';
 import '../../Page/App/style.css';
-import {useContext} from 'react';
+import {memo, useContext} from 'react';
 import {movieContext} from '../../Context'
 
 
 const List = () => {
-    let{database}=useContext(movieContext);
+    let{database,list,setList}=useContext(movieContext);
+    console.log(list);
   return (
     <div className="show-movie">
         <div className="col-12">
@@ -23,7 +24,11 @@ const List = () => {
                                     <div className="movie-title">{v.Title}</div>
                                     <div className="movie-year">Year {v.Year}</div>
                                     <div className="movie-add">
-                                       <button>Siyahıya əlavə edin</button>
+                                       <button onClick={()=>{
+                                           if(!list.some(item=>item===`${v.Title} (${v.Year})`)){
+                                            setList([...list,`${v.Title} (${v.Year})`])
+                                           }
+                                       }}>Siyahıya əlavə edin</button>
                                     </div>
                                 </div>
                             </div>
@@ -36,4 +41,4 @@ const List = () => {
   )
 }
 
-export default List;
+export default memo(List) ;

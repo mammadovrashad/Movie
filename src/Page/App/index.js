@@ -9,8 +9,9 @@ import Data from '../../components/Data';
 const App = () => {
   const[movieName,setMovieName]=useState();
   const[database,setDatabase]=useState([]);
+  const[list,setList]=useState([]);
   return (
-   <movieContext.Provider value={{movieName,setMovieName,database,setDatabase}}>
+   <movieContext.Provider value={{movieName,setMovieName,database,setDatabase,list,setList}}>
     <div className="countiner">
        <div className="row">
            <div className="col-12">
