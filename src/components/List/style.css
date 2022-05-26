@@ -26,10 +26,12 @@
 .movie-img{
     width: 100%;
     height: 190px;
+    background-color: gray;
 }
 .movie-img img{
     width: 100%;
     height: 190px;
+   
 }
 .movie-title,.movie-year{
     margin-bottom: 3px;

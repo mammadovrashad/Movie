@@ -20,10 +20,18 @@ const App = () => {
            </div>
        </div>
    </div>
-   <Form/>
-   <Data/>
-   <List/>
-   <Save/>
+      <Form/>
+      <Data/>
+    <div className="row" style={{alignItems:'flex-start'}}>
+        <div className="col-8">
+            <List/>
+        </div>
+        <div className="col-4">
+            <Save/>
+        </div>
+    </div>
+   
+  
    </movieContext.Provider>
   )
 }

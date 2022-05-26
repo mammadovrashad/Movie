@@ -1,0 +1,35 @@
+
+.save-form{
+    width: 100%;
+    /* height: 250px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.save-list{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listname{
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 30px;
+    padding:0px 5px;
+}
+.save-box{
+width: 80%;
+}
+.list-btn{
+    height: 40px;
+    width: 140px;
+    margin: 20px 0px;
+    letter-spacing: 1px;
+    background-color: rgb(67, 67, 227);
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}

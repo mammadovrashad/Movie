@@ -8,7 +8,7 @@ const List = () => {
     let{database}=useContext(movieContext);
   return (
     <div className="show-movie">
-        <div className="col-8">
+        <div className="col-12">
             <div className="cart">
                 {
                     database.map((v,i)=>{     
