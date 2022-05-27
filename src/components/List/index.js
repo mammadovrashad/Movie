@@ -6,7 +6,7 @@ import {movieContext} from '../../Context'
 
 const List = () => {
     let{database,list,setList}=useContext(movieContext);
-    console.log(list);
+    // console.log(list);
   return (
     <div className="show-movie">
         <div className="col-12">

@@ -1,9 +1,31 @@
-import { useContext} from 'react';
+import { useContext, useState,useRef} from 'react';
 import {movieContext} from '../../Context';
 import './style.css';
 
 const Save = () => {
+  const input=useRef();
   let{list,setList}=useContext(movieContext);
+  let[btnPossition,setBtnPossition]=useState(
+    {
+    status:true,
+    className:'list-btn-deactive'
+  })
+  const Change=()=>{
+    if(input.current.value.length>=1){
+      setBtnPossition(
+        {
+          status:false,
+          className:''
+        });
+    }
+    else{
+     setBtnPossition(
+       {
+        status:true,
+        className:'list-btn-deactive'
+       })
+    }
+  }
   return (
     <div className="save-blog">
      <div className="row">
@@ -11,7 +33,7 @@ const Save = () => {
         <div className="save-list">
           <div className="save-box">
                <form className='save-form'>
-                 <input type="text" placeholder='Siyahı adını daxil edin' className='listname'/>
+                 <input type="text"  ref={input} placeholder='Siyahı adını daxil edin' className='listname'  onChange={Change}/>
                </form>
                <div className="show-save-list">
                 {
@@ -29,7 +51,7 @@ const Save = () => {
                    })
                 }
                </div>
-               <button type='submit' className='list-btn'>Siyahını saxla</button>
+               <button disabled={btnPossition.status} className={`list-btn ${btnPossition.className}`}>Siyahını saxla</button>
           </div>
         </div>
        </div>
