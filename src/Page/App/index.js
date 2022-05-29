@@ -6,6 +6,7 @@ import Save from '../../components/SaveMovie';
 import { movieContext } from '../../Context';
 import Data from '../../components/Data';
 
+
 const App = () => {
   const[movieName,setMovieName]=useState();
   const[database,setDatabase]=useState([]);

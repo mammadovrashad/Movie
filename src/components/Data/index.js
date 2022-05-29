@@ -7,7 +7,7 @@ const Data = () => {
     let{movieName,setDatabase,database}=useContext(movieContext);
     useEffect(
         ()=>{
-            if(movieName!=undefined)
+            if(movieName!==undefined)
             {
                 getData();
             }

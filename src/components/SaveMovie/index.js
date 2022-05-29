@@ -1,5 +1,6 @@
 import { useContext, useState,useRef} from 'react';
 import {movieContext} from '../../Context';
+import {Link} from 'react-router-dom'
 import './style.css';
 
 const Save = () => {
@@ -51,7 +52,9 @@ const Save = () => {
                    })
                 }
                </div>
-               <button disabled={btnPossition.status} className={`list-btn ${btnPossition.className}`}>Siyahını saxla</button>
+              <Link to='/collection'>
+                 <button disabled={btnPossition.status} className={`list-btn ${btnPossition.className}`} >Siyahını saxla</button>
+              </Link>
           </div>
         </div>
        </div>
